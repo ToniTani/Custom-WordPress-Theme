@@ -11,10 +11,14 @@ use TANI_THEME\Inc\Traits\Singleton;
 class TANI_THEME {
     use Singleton;
 
-    public function __construct() // load class.
+    protected function __construct() // load class.
     {
-    }
-    protected function set_hooks() { //actions and filters
+        Assets::get_instance();
 
+        $this->setup_hooks();
+    }
+
+    protected function setup_hooks() {
+        //actions and filters
     }
 }
