@@ -36,5 +36,11 @@ class TANI_THEME {
             'unlink-homepage-logo' => true,
 
         ]);
+
+        add_theme_support('custom-background', [
+            'default-color' => '4169e1',
+            'default-image' => '',
+            'default-repeat' => 'no-repeat',
+        ]);
     }
 }
