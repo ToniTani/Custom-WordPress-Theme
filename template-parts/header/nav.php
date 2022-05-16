@@ -44,3 +44,11 @@
         </form>
     </div>
 </nav>
+<?php
+wp_nav_menu(
+        [
+            'theme_location' => 'tani-header-menu', // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
+            'container_class' => 'my_extra_menu_class' // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
+        ]
+);
+?>

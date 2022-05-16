@@ -18,8 +18,7 @@ class Menus {
 
     protected function setup_hooks() {
         //actions and filters
-        add_action('wp_enqueue_scripts', [$this, 'register_menus']);
-        add_action('wp_enqueue_scripts', [$this, 'register_scripts']);
+        add_action('init', [$this, 'register_menus']);
     }
 
     public function register_menus() {
