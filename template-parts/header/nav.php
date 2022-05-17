@@ -4,6 +4,12 @@
  *
  * @package Tani
  */
+
+
+$menu_class = \TANI_THEME\Inc\Menus::get_instance();
+$header_menu_id = $menu_class->get_menu_id('tani-header-menu');
+
+$header_menus = wp_get_nav_menu_items( $header_menu_id);
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <?php
@@ -17,9 +23,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
             </li>
@@ -29,13 +32,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -44,11 +41,4 @@
         </form>
     </div>
 </nav>
-<?php
-wp_nav_menu(
-        [
-            'theme_location' => 'tani-header-menu', // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
-            'container_class' => 'my_extra_menu_class' // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
-        ]
-);
-?>
+

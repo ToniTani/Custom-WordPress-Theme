@@ -24,7 +24,17 @@ class Menus {
     public function register_menus() {
             register_nav_menus([
                     'tani-header-menu' => esc_html__( 'Header Menu', 'tani' ),
-                    'tani-footer-menu' => esc_html__( 'Footer Menu', 'tani' )
+                    'tani-footer-menu' => esc_html__( 'Footer Menu', 'tani' ),
                 ]);
-        }
+    }
+    public function get_menu_id($location) {
+        // get all locations
+        $locations = get_nav_menu_locations();
+
+        // Get object id by locations
+        $menu_id = $locations[$location];
+
+        return ! empty( $menu_id ) ? $menu_id : '';
+    }
+
 }
